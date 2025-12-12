@@ -1,334 +1,79 @@
 <!doctype html>
-<html lang="id" style="height: 100%; overflow: hidden;">
+<html lang="id">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Herbaprima - Toko online produk kesehatan herbal premium.">
-  <meta property="og:title" content="Herbaprima - Solusi Herbal Modern">
-  <meta property="og:description" content="Produk herbal premium untuk kesehatan optimal Anda">
-  <meta property="og:type" content="website">
-  <title>Herbaprima - Solusi Herbal Modern untuk Hidup Sehat</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <title>Herbaprima - Solusi Herbal Modern</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body class="bg-gray-50">
-  <!-- <div class="preloader" id="preloader"><div class="spinner"></div></div> -->
+
+  <!-- Preloader -->
+  <div id="preloader" class="preloader"><div class="spinner"></div></div>
 
   <!-- Header -->
-  <!-- paste header -->
-  <header class="bg-gradient-to-r from-green-50 to-emerald-50 shadow-md sticky top-0 z-50">
-  <nav class="container mx-auto px-4 py-4">
-    <div class="flex justify-between items-center">
-      <div class="flex items-center space-x-2">
-        <div class="w-10 h-10 flex items-center justify-center">
-          <img id="logoImage" src="https://lh3.googleusercontent.com/d/1xp5ce29F3f-nVa_IEx925L-8YrXXbHo6" alt="Herbaprima Logo" class="w-full h-full object-contain" style="display: block;"
-               onerror="this.style.display='none'; document.getElementById('logoFallback').style.display='flex';">
-          <div id="logoFallback" class="w-10 h-10 bg-green-600 rounded-full flex items-center justify-center text-white font-bold text-xl" style="display: none;">H</div>
-        </div>
-        <span id="headerBrandName" class="text-2xl font-bold text-green-700">Herbaprima</span>
-      </div>
+  <header class="bg-green-50 shadow sticky top-0 z-50">
+    <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+      <span class="text-2xl font-bold text-green-700">Herbaprima</span>
+      <button id="cartBtn" class="relative text-gray-700">
+        🛒 <span id="cartCount" class="absolute -top-2 -right-2 bg-red-500 text-white text-xs rounded-full px-1">0</span>
+      </button>
+    </div>
+  </header>
 
-      <div class="hidden md:flex space-x-6">
-        <a href="index.html" class="nav-link text-gray-700 hover:text-green-600 font-medium">Home</a>
-        <a href="produk/minuman_sehat/index.html" class="nav-link text-gray-700 hover:text-green-600 font-medium">Minuman Sehat</a>
-        <a href="produk/madu_premium/index.html" class="nav-link text-gray-700 hover:text-green-600 font-medium">Madu Premium</a>
-        <a href="produk/minyak_herba/index.html" class="nav-link text-gray-700 hover:text-green-600 font-medium">Minyak Herba</a>
-        <a href="produk/aneka_herbal/index.html" class="nav-link text-gray-700 hover:text-green-600 font-medium">Aneka Herbal</a>
-        <a href="produk/perawatan_kulit/index.html" class="nav-link text-gray-700 hover:text-green-600 font-medium">Perawatan Kulit</a>
-        <a href="produk/perawatan_pribadi/index.html" class="nav-link text-gray-700 hover:text-green-600 font-medium">Perawatan Pribadi</a>
-        <a href="tentang_kami.html" class="nav-link text-gray-700 hover:text-green-600 font-medium">Tentang Kami</a>
-        <a href="testimoni.html" class="nav-link text-gray-700 hover:text-green-600 font-medium">Testimoni</a>
-        <a href="blog.html" class="nav-link text-gray-700 hover:text-green-600 font-medium">Blog</a>
-        <a href="kontak.html" class="nav-link text-gray-700 hover:text-green-600 font-medium">Kontak</a>
+  <!-- Hero Section -->
+  <section class="relative h-screen overflow-hidden">
+    <div class="hero-slider">
+      <div class="hero-slide active bg-green-700">
+        <div class="absolute inset-0 bg-black opacity-40"></div>
+        <img src="https://hni.net/public/front/img/produk/sevel-stamina_11-09-25_.png" class="w-full h-full object-contain opacity-30">
       </div>
-
-      <div class="flex items-center space-x-4">
-        <button id="cartBtn" class="desktop-cart relative p-2 text-gray-700 hover:text-green-600 transition">
-          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                  d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"/>
-          </svg>
-          <span id="cartCount" class="cart-badge">0</span>
-        </button>
-        <button id="mobileMenuBtn" class="md:hidden p-2 text-gray-700">
-          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                  d="M4 6h16M4 12h16M4 18h16"/>
-          </svg>
-        </button>
+      <div class="hero-slide bg-emerald-600">
+        <div class="absolute inset-0 bg-black opacity-40"></div>
+        <img src="https://hni.net/public/front/img/produk/cappucino-lessugar1_14-11-24_.png" class="w-full h-full object-contain opacity-30">
       </div>
     </div>
-
-    <div id="mobileMenu" class="hidden md:hidden mt-4 pb-4 space-y-2">
-      <a href="index.html" class="nav-link block py-2 text-gray-700 hover:text-green-600 font-medium">Home</a>
-      <a href="produk/minuman_sehat/index.html" class="nav-link block py-2 text-gray-700 hover:text-green-600 font-medium">Minuman Sehat</a>
-      <a href="produk/madu_premium/index.html" class="nav-link block py-2 text-gray-700 hover:text-green-600 font-medium">Madu Premium</a>
-      <a href="produk/minyak_herba/index.html" class="nav-link block py-2 text-gray-700 hover:text-green-600 font-medium">Minyak Herba</a>
-      <a href="produk/aneka_herbal/index.html" class="nav-link block py-2 text-gray-700 hover:text-green-600 font-medium">Aneka Herbal</a>
-      <a href="produk/perawatan_kulit/index.html" class="nav-link block py-2 text-gray-700 hover:text-green-600 font-medium">Perawatan Kulit</a>
-      <a href="produk/perawatan_pribadi/index.html" class="nav-link block py-2 text-gray-700 hover:text-green-600 font-medium">Perawatan Pribadi</a>
-      <a href="tentang_kami.html" class="nav-link block py-2 text-gray-700 hover:text-green-600 font-medium">Tentang Kami</a>
-      <a href="testimoni.html" class="nav-link block py-2 text-gray-700 hover:text-green-600 font-medium">Testimoni</a>
-      <a href="blog.html" class="nav-link block py-2 text-gray-700 hover:text-green-600 font-medium">Blog</a>
-      <a href="kontak.html" class="nav-link block py-2 text-gray-700 hover:text-green-600 font-medium">Kontak</a>
-    </div>
-  </nav>
-</header>
-
-  <!-- Floating mobile cart -->
-  <button id="floatingCartMobile" class="floating-cart-mobile">
-    <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-            d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"/>
-    </svg>
-    <span id="cartCountMobile" class="cart-badge">0</span>
-  </button>
-
-<!-- Hero Section -->
-<section class="relative h-screen overflow-hidden">
-  <!-- Hero Slider -->
-  <div class="hero-slider">
-    <!-- Slide 1 -->
-    <div class="hero-slide active bg-gradient-to-r from-green-800 to-green-600">
-      <div class="absolute inset-0 bg-black opacity-40"></div>
-      <div class="absolute inset-0 flex items-center justify-center">
-        <img src="https://hni.net/public/front/img/produk/sevel-stamina_11-09-25_.png" 
-             alt="Sevel Stamina" 
-             class="w-full h-full object-contain opacity-30"
-             onerror="this.style.display='none';">
-      </div>
-    </div>
-    <!-- Slide 2 -->
-    <div class="hero-slide bg-gradient-to-br from-green-700 to-emerald-600">
-      <div class="absolute inset-0 bg-black opacity-40"></div>
-      <div class="absolute inset-0 flex items-center justify-center">
-        <img src="https://hni.net/public/front/img/produk/cappucino-lessugar1_14-11-24_.png" 
-             alt="Cappuccino Less Sugar" 
-             class="w-full h-full object-contain opacity-30"
-             onerror="this.style.display='none';">
-      </div>
-    </div>
-    <!-- Slide 3 -->
-    <div class="hero-slide bg-gradient-to-tl from-emerald-800 to-green-500">
-      <div class="absolute inset-0 bg-black opacity-40"></div>
-      <div class="absolute inset-0 flex items-center justify-center">
-        <img src="https://hni.net/public/front/img/produk/hni-health-3_18-11-24_.png" 
-             alt="HNI Health" 
-             class="w-full h-full object-contain opacity-30"
-             onerror="this.style.display='none';">
-      </div>
-    </div>
-    <!-- Slide 4 -->
-    <div class="hero-slide bg-gradient-to-br from-green-600 to-teal-600">
-      <div class="absolute inset-0 bg-black opacity-40"></div>
-      <div class="absolute inset-0 flex items-center justify-center">
-        <img src="https://hni.net/public/front/img/produk/gluta2_27-10-22_.png" 
-             alt="Gluta Juicy Drink" 
-             class="w-full h-full object-contain opacity-30"
-             onerror="this.style.display='none';">
-      </div>
-    </div>
-  </div>
-
-  <!-- Hero Content -->
-  <div class="absolute inset-0 flex items-center justify-center z-10">
-    <div class="text-center text-white px-4 max-w-4xl">
-      <!-- Title & Subtitle diisi otomatis dari defaultConfig via app.js -->
-      <h1 id="heroTitle" class="text-4xl md:text-6xl font-bold mb-6 fade-in"></h1>
-      <p id="heroSubtitle" class="text-lg md:text-xl mb-8 fade-in"></p>
-
-      <!-- CTA Buttons -->
-      <div class="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4 fade-in">
-        <a href="/herbaprima/produk/minuman_sehat/index.html" 
-           class="nav-link bg-white text-green-700 px-8 py-4 rounded-full font-semibold hover:bg-green-50 transition transform hover:scale-105">
-          Lihat Produk
-        </a>
-        <a href="/herbaprima/kontak.html" 
-           class="nav-link bg-transparent border-2 border-white text-white px-8 py-4 rounded-full font-semibold hover:bg-white hover:text-green-700 transition transform hover:scale-105">
-          Hubungi Kami
-        </a>
-      </div>
-    </div>
-  </div>
-
-  <!-- Slider Dots -->
-  <div class="absolute bottom-8 left-0 right-0 flex justify-center space-x-3 z-20">
-    <button class="slider-dot w-3 h-3 rounded-full bg-white opacity-100 transition" data-slide="0"></button>
-    <button class="slider-dot w-3 h-3 rounded-full bg-white opacity-50 transition" data-slide="1"></button>
-    <button class="slider-dot w-3 h-3 rounded-full bg-white opacity-50 transition" data-slide="2"></button>
-    <button class="slider-dot w-3 h-3 rounded-full bg-white opacity-50 transition" data-slide="3"></button>
-  </div>
-</section>
-
-  <!-- Kategori Unggulan -->
-  <section class="py-20 bg-white">
-    <div class="container mx-auto px-4">
-      <h2 class="text-3xl md:text-4xl font-bold text-center text-gray-800 mb-12 fade-in">Kategori Produk Unggulan</h2>
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6 gap-8">
-        <div class="category-card bg-gradient-to-br from-green-50 to-green-100 rounded-xl p-8 text-center fade-in" onclick="location.href='produk/minuman_sehat/index.html'">
-          <div class="text-6xl mb-4">🍵</div>
-          <h3 class="text-xl font-semibold text-gray-800 mb-2">Minuman Sehat</h3>
-          <p class="text-gray-600 text-sm">Minuman herbal alami</p>
-        </div>
-        <div class="category-card bg-gradient-to-br from-emerald-50 to-emerald-100 rounded-xl p-8 text-center fade-in" onclick="location.href='produk/madu_premium/index.html'">
-          <div class="text-6xl mb-4">🍯</div>
-          <h3 class="text-xl font-semibold text-gray-800 mb-2">Madu Premium</h3>
-          <p class="text-gray-600 text-sm">Madu murni berkualitas tinggi</p>
-        </div>
-        <div class="category-card bg-gradient-to-br from-teal-50 to-teal-100 rounded-xl p-8 text-center fade-in" onclick="location.href='produk/minyak_herba/index.html'">
-          <div class="text-6xl mb-4">🌿</div>
-          <h3 class="text-xl font-semibold text-gray-800 mb-2">Minyak Herba</h3>
-          <p class="text-gray-600 text-sm">Minyak esensial murni</p>
-        </div>
-        <div class="category-card bg-gradient-to-br from-lime-50 to-lime-100 rounded-xl p-8 text-center fade-in" onclick="location.href='produk/aneka_herbal/index.html'">
-          <div class="text-6xl mb-4">🌾</div>
-          <h3 class="text-xl font-semibold text-gray-800 mb-2">Aneka Herbal</h3>
-          <p class="text-gray-600 text-sm">Herbal pilihan serbaguna</p>
-        </div>
-        <div class="category-card bg-gradient-to-br from-rose-50 to-rose-100 rounded-xl p-8 text-center fade-in" onclick="location.href='produk/perawatan_kulit/index.html'">
-          <div class="text-6xl mb-4">💆</div>
-          <h3 class="text-xl font-semibold text-gray-800 mb-2">Perawatan Kulit</h3>
-          <p class="text-gray-600 text-sm">Perawatan alami untuk kulit</p>
-        </div>
-        <div class="category-card bg-gradient-to-br from-indigo-50 to-indigo-100 rounded-xl p-8 text-center fade-in" onclick="location.href='produk/perawatan_pribadi/index.html'">
-          <div class="text-6xl mb-4">🧴</div>
-          <h3 class="text-xl font-semibold text-gray-800 mb-2">Perawatan Pribadi</h3>
-          <p class="text-gray-600 text-sm">Produk personal care herbal</p>
+    <div class="absolute inset-0 flex items-center justify-center z-10 text-center text-white">
+      <div>
+        <h1 id="heroTitle" class="text-4xl md:text-6xl font-bold mb-6">Herbaprima — Solusi Herbal Modern</h1>
+        <p id="heroSubtitle" class="text-lg md:text-xl mb-8">Produk herbal premium berkualitas tinggi dari alam untuk kesehatan optimal Anda</p>
+        <div class="flex justify-center space-x-4">
+          <a href="#produk" class="bg-white text-green-700 px-6 py-3 rounded-full font-semibold">Lihat Produk</a>
+          <a href="#kontak" class="border-2 border-white px-6 py-3 rounded-full font-semibold">Hubungi Kami</a>
         </div>
       </div>
+    </div>
+    <div class="absolute bottom-8 left-0 right-0 flex justify-center space-x-3 z-20">
+      <button class="slider-dot w-3 h-3 rounded-full bg-white opacity-100" data-slide="0"></button>
+      <button class="slider-dot w-3 h-3 rounded-full bg-white opacity-50" data-slide="1"></button>
     </div>
   </section>
 
-  <!-- Footer -->
-  <!-- paste footer -->
-  <footer class="bg-gray-900 text-white py-12">
-  <div class="container mx-auto px-4">
-    <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
-      <div>
-        <div class="flex items-center space-x-2 mb-4">
-          <svg class="w-8 h-8 text-green-500" fill="currentColor" viewBox="0 0 24 24">
-            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-1-13h2v6h-2zm0 8h2v2h-2z"/>
-          </svg>
-          <span id="footerBrandName" class="text-xl font-bold">Herbaprima</span>
-        </div>
-        <p class="text-gray-400 text-sm">Solusi herbal modern untuk hidup sehat alami. Produk berkualitas premium untuk kesehatan Anda.</p>
-      </div>
-
-      <div>
-        <h3 class="text-lg font-semibold mb-4">Navigasi</h3>
-        <ul class="space-y-2 text-gray-400 text-sm">
-          <li><a href="index.html" class="nav-link hover:text-green-500 transition">Home</a></li>
-          <li><a href="tentang_kami.html" class="nav-link hover:text-green-500 transition">Tentang Kami</a></li>
-          <li><a href="testimoni.html" class="nav-link hover:text-green-500 transition">Testimoni</a></li>
-          <li><a href="blog.html" class="nav-link hover:text-green-500 transition">Blog</a></li>
-          <li><a href="kontak.html" class="nav-link hover:text-green-500 transition">Kontak</a></li>
-        </ul>
-      </div>
-
-      <div>
-        <h3 class="text-lg font-semibold mb-4">Kategori</h3>
-        <ul class="space-y-2 text-gray-400 text-sm">
-          <li><a href="produk/minuman_sehat/index.html" class="nav-link hover:text-green-500 transition">Minuman Sehat</a></li>
-          <li><a href="produk/madu_premium/index.html" class="nav-link hover:text-green-500 transition">Madu Premium</a></li>
-          <li><a href="produk/minyak_herba/index.html" class="nav-link hover:text-green-500 transition">Minyak Herba</a></li>
-          <li><a href="produk/aneka_herbal/index.html" class="nav-link hover:text-green-500 transition">Aneka Herbal</a></li>
-          <li><a href="produk/perawatan_kulit/index.html" class="nav-link hover:text-green-500 transition">Perawatan Kulit</a></li>
-          <li><a href="produk/perawatan_pribadi/index.html" class="nav-link hover:text-green-500 transition">Perawatan Pribadi</a></li>
-        </ul>
-      </div>
-
-      <div>
-        <h3 class="text-lg font-semibold mb-4">Newsletter</h3>
-        <p class="text-gray-400 text-sm mb-4">Dapatkan tips kesehatan dan promo menarik</p>
-        <form id="newsletterForm" class="flex">
-          <input type="email" placeholder="Email Anda" class="flex-1 px-4 py-2 bg-gray-800 text-white rounded-l-lg focus:outline-none">
-          <button type="submit" class="bg-green-600 px-4 py-2 rounded-r-lg hover:bg-green-700 transition">
-            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
-            </svg>
-          </button>
-        </form>
-      </div>
-    </div>
-
-    <div class="border-t border-gray-800 pt-8 text-center text-gray-400 text-sm">
-      <p>© 2024 Herbaprima. All rights reserved. Made with 💚 for healthier life.</p>
-    </div>
-  </div>
-</footer>
-
-  <footer class="bg-gray-900 text-white py-12">...</footer>
-
-  <!-- Floating WhatsApp -->
-  <a href="#" id="floatingWhatsApp" class="floating-whatsapp" aria-label="WhatsApp">
-    <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c..."/></svg>
-  </a>
-
-  <!-- Scroll to top -->
-  <button id="scrollToTop" class="scroll-to-top">
-    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18"/></svg>
-  </button>
-
-  <!-- Product Modal -->
-  <div id="productModal" class="modal">
-    <div class="modal-content">
-      <div class="p-8">
-        <div class="flex justify-between items-start mb-6">
-          <h2 id="modalTitle" class="text-3xl font-bold text-gray-800"></h2>
-          <button id="closeModal" class="text-gray-500 hover:text-gray-700 text-3xl">×</button>
-        </div>
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-          <div><div id="modalImage" class="bg-gradient-to-br from-green-100 to-green-200 rounded-xl h-96 flex items-center justify-center text-8xl"></div></div>
-          <div>
-            <div id="modalBestseller" class="hidden inline-block bg-red-500 text-white text-xs px-3 py-1 rounded-full mb-4">TERLARIS</div>
-            <p id="modalPrice" class="text-3xl font-bold text-green-600 mb-6"></p>
-            <div class="mb-6"><h3 class="text-xl font-semibold text-gray-800 mb-2">Deskripsi</h3><p id="modalDescription" class="modal-description text-gray-600"></p></div>
-            <div class="mb-6"><h3 class="text-xl font-semibold text-gray-800 mb-2">Manfaat</h3><ul id="modalBenefits" class="modal-benefits list-disc list-inside text-gray-600 space-y-1"></ul></div>
-            <div class="mb-6"><h3 class="text-xl font-semibold text-gray-800 mb-2">Komposisi</h3><p id="modalComposition" class="modal-composition text-gray-600"></p></div>
-            <div class="flex space-x-4">
-              <button id="modalAddToCart" class="flex-1 bg-green-600 text-white py-3 rounded-lg font-semibold hover:bg-green-700 transition">Tambah ke Keranjang</button>
-              <button id="modalBuyWhatsApp" class="flex-1 bg-green-500 text-white py-3 rounded-lg font-semibold hover:bg-green-600 transition flex items-center justify-center">
-                <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c..."/></svg> Beli via WhatsApp
-              </button>
-            </div>
-          </div>
-        </div>
-        <button id="closeModalBottom" class="close-modal-bottom w-full mt-6 bg-gray-200 text-gray-700 py-3 rounded-lg font-semibold hover:bg-gray-300 transition">Tutup</button>
-      </div>
-    </div>
-  </div>
+  <!-- Produk Grid -->
+  <section id="produk" class="py-16 container mx-auto px-4">
+    <h2 class="text-3xl font-bold mb-8">Produk Unggulan</h2>
+    <div id="productGrid" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6"></div>
+  </section>
 
   <!-- Cart Modal -->
-  <div id="cartModal" class="modal">
-    <div class="modal-content">
-      <div class="p-8">
-        <div class="flex justify-between items-start mb-6">
-          <h2 class="text-3xl font-bold text-gray-800">Keranjang Belanja</h2>
-          <button id="closeCart" class="text-gray-500 hover:text-gray-700 text-3xl">×</button>
-        </div>
-        <div id="cartItems" class="space-y-4 mb-6"></div>
-        <div id="emptyCart" class="text-center py-12 hidden">
-          <div class="text-6xl mb-4">🛒</div>
-          <p class="text-gray-600">Keranjang Anda masih kosong</p>
-        </div>
-        <div id="cartSummary" class="border-t pt-6 hidden">
-          <div class="flex justify-between items-center mb-6">
-            <span class="text-xl font-semibold text-gray-800">Total:</span>
-            <span id="cartTotal" class="text-3xl font-bold text-green-600"></span>
-          </div>
-          <div class="flex space-x-4">
-            <button id="clearCart" class="flex-1 bg-red-500 text-white py-3 rounded-lg font-semibold hover:bg-red-600 transition">Hapus Semua</button>
-            <button id="checkoutWhatsApp" class="flex-1 bg-green-600 text-white py-3 rounded-lg font-semibold hover:bg-green-700 transition flex items-center justify-center">
-              <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c..."/></svg>
-              Checkout WhatsApp
-            </button>
-          </div>
-        </div>
-        <button id="closeCartBottom" class="close-modal-bottom w-full mt-6 bg-gray-200 text-gray-700 py-3 rounded-lg font-semibold hover:bg-gray-300 transition">Tutup</button>
+  <div id="cartModal" class="fixed inset-0 bg-black bg-opacity-50 hidden items-center justify-center z-50">
+    <div class="bg-white rounded-lg p-6 w-full max-w-md">
+      <h2 class="text-xl font-bold mb-4">Keranjang Belanja</h2>
+      <div id="cartItems" class="space-y-2"></div>
+      <div class="flex justify-between mt-4">
+        <span>Total:</span><span id="cartTotal" class="font-bold text-green-600"></span>
+      </div>
+      <div class="flex space-x-2 mt-4">
+        <button id="checkoutWhatsApp" class="flex-1 bg-green-600 text-white py-2 rounded">Checkout WA</button>
+        <button id="closeCart" class="flex-1 bg-gray-300 py-2 rounded">Tutup</button>
       </div>
     </div>
   </div>
+
+  <!-- Scroll to Top -->
+  <button id="scrollToTop" class="scroll-to-top">⬆</button>
 
   <script src="assets/js/app.js"></script>
 </body>
