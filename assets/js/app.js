@@ -1,3 +1,10 @@
+document.addEventListener('DOMContentLoaded', () => {
+  setTimeout(()=>document.getElementById('preloader').classList.add('hidden'),1000);
+  renderProducts();
+
+  // Hero slider
+  setInterval(heroSlider,4000
+              
 const products = [
   {id:1, name:"Madu Pahit", price:120000, image:"https://hni.net/public/front/img/produk/MADU%20PAHIT-1_04-01-19_.png"},
   {id:2, name:"Centella Teh", price:70000, image:"https://hni.net/public/front/img/produk/CENTELLA-1_04-01-19_.png"},
@@ -31,3 +38,4 @@ function updateCart(){
 
 function showToast(msg){
   const t=document.createElement('div');t.className='toast';t
+
