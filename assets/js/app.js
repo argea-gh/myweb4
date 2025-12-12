@@ -356,6 +356,7 @@ document.addEventListener('DOMContentLoaded', () => {
   setTimeout(() => document.getElementById('preloader')?.classList.add('hidden'), 1000);
 
   // Init
+  onConfigChange(defaultConfig);
   renderProducts();
   updateCartCount();
   observeElements();
