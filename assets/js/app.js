@@ -1,6 +1,11 @@
+ 
 document.addEventListener('DOMContentLoaded', () => {
-  setTimeout(()=>document.getElementById('preloader').classList.add('hidden'),1000);
-  renderProducts();
+  setTimeout(() => {
+    const preloader = document.getElementById('preloader');
+    if (preloader) preloader.classList.add('hidden');
+  }, 1000);
+});
+renderProducts();
 
   // Hero slider
   setInterval(heroSlider,4000
