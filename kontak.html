@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kontak Kami — Herbaprima</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- NAVBAR -->
+<header class="navbar">
+    <div class="logo"><a href="index.html">HERBAPRIMA</a></div>
+    <nav>
+        <a href="index.html">Beranda</a>
+        <a href="tentang_kami.html">Tentang Kami</a>
+        <a href="blog.html">Blog</a>
+        <a class="active" href="kontak.html">Kontak</a>
+        <a href="cart.html" class="cart-link">Keranjang <span id="cartCount">0</span></a>
+    </nav>
+</header>
+
+<!-- HERO -->
+<section class="page-header">
+    <h1>Hubungi Kami</h1>
+    <p>Kami siap membantu Anda kapan saja. Silakan tinggalkan pesan Anda.</p>
+</section>
+
+<!-- FORM KONTAK -->
+<section class="container contact-section">
+    <div class="contact-info">
+        <h2>Informasi Kontak</h2>
+        <p><strong>Alamat:</strong> Jl. Sehat Raya No. 10, Jakarta</p>
+        <p><strong>Email:</strong> support@herbaprima.id</p>
+        <p><strong>Telepon:</strong> +62 812-3456-7890</p>
+        <p><strong>Jam Operasional:</strong> 08:00 – 20:00</p>
+    </div>
+
+    <div class="contact-form">
+        <h2>Kirim Pesan</h2>
+        <form id="contactForm">
+            <label>Nama Lengkap</label>
+            <input type="text" id="nama" placeholder="Masukkan nama Anda" required>
+
+            <label>Email</label>
+            <input type="email" id="email" placeholder="Masukkan email" required>
+
+            <label>Pesan</label>
+            <textarea id="pesan" placeholder="Tulis pesan Anda..." required></textarea>
+
+            <button type="submit" class="btn-primary">Kirim Pesan</button>
+        </form>
+
+        <p id="contactSuccess" class="success-message" style="display:none;">
+            ✔ Pesan Anda telah dikirim. Kami akan membalas sesegera mungkin!
+        </p>
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+    <p>© 2025 Herbaprima. Semua hak dilindungi.</p>
+</footer>
+
+<script>
+document.getElementById("contactForm").addEventListener("submit", function(e){
+    e.preventDefault();
+
+    document.getElementById("contactSuccess").style.display = "block";
+
+    // Reset form
+    this.reset();
+});
+</script>
+
+<script src="cart.js"></script>
+
+</body>
+</html>
