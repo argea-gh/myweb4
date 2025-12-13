@@ -1,16 +1,443 @@
-body { font-family: 'Poppins', sans-serif; }
-.preloader { position:fixed; top:0; left:0; width:100%; height:100%; background:white; display:flex; justify-content:center; align-items:center; z-index:9999; }
-.preloader.hidden { opacity:0; pointer-events:none; transition:opacity .5s ease; }
-.spinner { width:50px; height:50px; border:4px solid #e5e7eb; border-top:4px solid #16a34a; border-radius:50%; animation:spin 1s linear infinite; }
-@keyframes spin { to{transform:rotate(360deg);} }
+/* =====================================================
+   HERBAPRIMA - GLOBAL PREMIUM STYLE
+   ===================================================== */
 
-.hero-slider { position:relative; width:100%; height:100%; overflow:hidden; }
-.hero-slide { position:absolute; top:0; left:0; width:100%; height:100%; opacity:0; transition:opacity 1s ease; }
-.hero-slide.active { opacity:1; }
+/* ---------------------- FONT ---------------------- */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
 
-.toast { position:fixed; top:50%; left:50%; transform:translate(-50%,-50%); background:#16a34a; color:white; padding:12px 24px; border-radius:8px; z-index:2000; }
+body {
+    margin: 0;
+    font-family: "Poppins", sans-serif;
+    background: #f9f9f9;
+    color: #222;
+    overflow-x: hidden;
+}
 
-.cart-badge { position:absolute; top:-8px; right:-8px; background:#ef4444; color:white; border-radius:50%; padding:0 6px; font-size:12px; }
-.scroll-to-top { position:fixed; bottom:30px; right:30px; background:#16a34a; color:white; width:50px; height:50px; border-radius:50%; display:none; justify-content:center; align-items:center; cursor:pointer; }
-.scroll-to-top.visible { display:flex; }
+/* ---------------------- VARIABLES ---------------------- */
+:root {
+    --green: #0d8b4c;
+    --green-dark: #0a6a3b;
+    --light: #ffffff;
+    --dark: #222;
+    --gray: #666;
+    --shadow: 0 4px 20px rgba(0,0,0,0.08);
+}
 
+/* =====================================================
+   HEADER
+===================================================== */
+header {
+    width: 100%;
+    background: var(--light);
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    box-shadow: var(--shadow);
+}
+
+header .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 20px;
+    max-width: 1200px;
+    margin: auto;
+}
+
+header img.logo {
+    height: 55px;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+    padding: 0;
+    margin: 0;
+    align-items: center;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: var(--dark);
+    font-weight: 500;
+    transition: 0.2s;
+}
+
+nav ul li a:hover {
+    color: var(--green);
+}
+
+/* CART ICON */
+.cart-icon {
+    position: relative;
+}
+
+.cart-icon span {
+    position: absolute;
+    top: -7px;
+    right: -10px;
+    background: red;
+    color: white;
+    padding: 2px 6px;
+    border-radius: 50%;
+    font-size: 11px;
+}
+
+/* MOBILE MENU */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.hamburger span {
+    width: 26px;
+    height: 3px;
+    background: var(--dark);
+    margin: 4px 0;
+    border-radius: 2px;
+}
+
+.mobile-menu {
+    display: none;
+    background: white;
+    box-shadow: var(--shadow);
+}
+
+.mobile-menu a {
+    display: block;
+    padding: 12px 20px;
+    color: #333;
+    border-bottom: 1px solid #eee;
+}
+
+/* =====================================================
+   HERO SECTION
+===================================================== */
+.hero {
+    width: 100%;
+    height: 480px;
+    position: relative;
+    overflow: hidden;
+    border-bottom: 4px solid var(--green);
+}
+
+.hero img {
+    width: 100%;
+    height: 480px;
+    object-fit: cover;
+    position: absolute;
+    animation: fadeSlide 12s infinite;
+}
+
+@keyframes fadeSlide {
+    0% { opacity: 1; }
+    25% { opacity: 0; }
+    50% { opacity: 1; }
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.35);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: center;
+}
+
+.hero-overlay h1 {
+    font-size: 42px;
+    font-weight: 700;
+}
+
+.hero-overlay p {
+    font-size: 18px;
+}
+
+.hero-buttons {
+    margin-top: 15px;
+}
+
+.btn-primary {
+    padding: 12px 25px;
+    background: var(--green);
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: 600;
+    margin: 5px;
+    display: inline-block;
+    transition: 0.25s;
+}
+
+.btn-primary:hover {
+    background: var(--green-dark);
+}
+
+/* =====================================================
+   CATEGORY SECTION
+===================================================== */
+
+.section-title {
+    text-align: center;
+    padding: 40px 0 10px;
+    font-size: 28px;
+    font-weight: 600;
+}
+
+.categories {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 20px;
+    padding: 20px;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.category-card {
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: var(--shadow);
+    font-weight: 500;
+    transition: 0.25s;
+    cursor: pointer;
+}
+
+.category-card:hover {
+    transform: translateY(-5px);
+}
+
+/* =====================================================
+   PRODUCT GRID
+===================================================== */
+
+.product-grid {
+    max-width: 1200px;
+    margin: auto;
+    padding: 20px;
+    display: grid;
+    gap: 20px;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+}
+
+.product-card {
+    background: white;
+    border-radius: 12px;
+    padding: 15px;
+    text-align: center;
+    box-shadow: var(--shadow);
+    transition: 0.25s;
+}
+
+.product-card:hover {
+    transform: translateY(-8px);
+}
+
+.product-card img {
+    width: 100%;
+    height: 160px;
+    object-fit: contain;
+}
+
+.product-card h3 {
+    font-size: 16px;
+    margin: 10px 0 5px;
+}
+
+.product-card .price {
+    color: var(--green);
+    font-weight: 700;
+}
+
+.btn-small {
+    padding: 8px 12px;
+    background: var(--green);
+    color: white;
+    border-radius: 6px;
+    font-size: 13px;
+    margin: 5px;
+    display: inline-block;
+    text-decoration: none;
+}
+
+/* =====================================================
+   TESTIMONI
+===================================================== */
+
+.testimoni-grid {
+    max-width: 1200px;
+    padding: 20px;
+    margin: auto;
+    display: grid;
+    gap: 20px;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+}
+
+.testimoni-card {
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: var(--shadow);
+}
+
+.testimoni-card img {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+}
+
+.testimoni-name {
+    font-weight: 600;
+}
+
+/* =====================================================
+   MODAL DETAIL PRODUK
+===================================================== */
+
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.6);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.modal-content {
+    background: white;
+    border-radius: 15px;
+    padding: 20px;
+    max-width: 650px;
+    width: 100%;
+    max-height: 90vh;
+    overflow-y: auto;
+    box-shadow: var(--shadow);
+}
+
+.modal-close {
+    float: right;
+    font-size: 22px;
+    cursor: pointer;
+    color: #444;
+}
+
+/* =====================================================
+   FLOATING WHATSAPP
+===================================================== */
+.float-wa {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    background: #25d366;
+    color: white;
+    padding: 12px 14px;
+    border-radius: 50%;
+    font-size: 26px;
+    cursor: pointer;
+    box-shadow: var(--shadow);
+    z-index: 99;
+}
+
+/* =====================================================
+   SCROLL TO TOP
+===================================================== */
+#scrollTop {
+    position: fixed;
+    bottom: 25px;
+    left: 25px;
+    background: var(--green);
+    padding: 12px 14px;
+    color: white;
+    border-radius: 50%;
+    font-size: 22px;
+    cursor: pointer;
+    display: none;
+    z-index: 99;
+}
+
+/* =====================================================
+   FOOTER
+===================================================== */
+
+footer {
+    margin-top: 60px;
+    background: var(--dark);
+    color: white;
+    padding: 40px 20px;
+}
+
+footer .grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 25px;
+    max-width: 1200px;
+    margin: auto;
+}
+
+footer h3 {
+    font-size: 18px;
+    margin-bottom: 12px;
+}
+
+footer a {
+    color: #ccc;
+    text-decoration: none;
+}
+
+/* =====================================================
+   DARK MODE
+===================================================== */
+
+.dark-mode {
+    background: #111;
+    color: #eee;
+}
+
+.dark-mode .product-card,
+.dark-mode .testimoni-card {
+    background: #222;
+    color: #ddd;
+}
+
+/* =====================================================
+   RESPONSIVE
+===================================================== */
+
+@media(max-width:900px){
+    .categories {
+        grid-template-columns: repeat(3,1fr);
+    }
+    footer .grid {
+        grid-template-columns: repeat(2,1fr);
+    }
+}
+
+@media(max-width:600px){
+    nav ul {
+        display: none;
+    }
+    .hamburger {
+        display: flex;
+    }
+    .categories {
+        grid-template-columns: repeat(2,1fr);
+    }
+    .hero-overlay h1 {
+        font-size: 26px;
+    }
+    footer .grid {
+        grid-template-columns: repeat(1,1fr);
+    }
+}
