@@ -179,3 +179,32 @@ function clearCart() {
    Auto Load Badge on all pages
 ------------------------------------------------------ */
 document.addEventListener("DOMContentLoaded", updateCartBadge);
+
+// ==========================
+// CHECKOUT WHATSAPP
+// ==========================
+function checkoutWhatsApp() {
+    let cart = JSON.parse(localStorage.getItem("cart") || "[]");
+    if (cart.length === 0) {
+        alert("Keranjang masih kosong!");
+        return;
+    }
+
+    let waNumber = "6282241900467";
+
+    let message = "Halo Herbaprima, saya ingin memesan:%0A";
+    let totalHarga = 0;
+
+    cart.forEach(item => {
+        let subtotal = item.harga * item.qty;
+        totalHarga += subtotal;
+        message += `- ${item.nama} (Qty: ${item.qty}) - Rp ${subtotal.toLocaleString()}%0A`;
+    });
+
+    message += `%0ATotal: Rp ${totalHarga.toLocaleString()}`;
+    message += `%0A%0ANama:%0AAlamat:%0ANo HP:%0A`;
+
+    let url = `https://wa.me/${waNumber}?text=${message}`;
+    window.open(url, "_blank");
+}
+
