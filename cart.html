@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Keranjang Belanja – Herbaprima</title>
+
+    <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+
+<body>
+
+    <!-- =======================
+         NAVBAR
+    ======================== -->
+    <header class="navbar">
+        <a href="index.html" class="logo">Herbaprima</a>
+
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="produk/minuman_sehat/index.html">Produk</a>
+            <a href="tentang_kami.html">Tentang Kami</a>
+            <a href="kontak.html">Kontak</a>
+
+            <a href="cart.html" class="cart-btn">
+                🛒 <span id="cart-count">0</span>
+            </a>
+        </nav>
+    </header>
+
+    <!-- =======================
+         CART PAGE
+    ======================== -->
+    <section class="cart-page">
+        <h1>Keranjang Belanja</h1>
+
+        <div id="cart-container" class="cart-container">
+            <!-- Item keranjang muncul otomatis dari cart.js -->
+        </div>
+
+        <!-- TOTAL -->
+        <div class="cart-summary">
+            <h2>Total: <span id="cart-total">Rp 0</span></h2>
+
+            <div class="cart-actions">
+                <button id="cart-clear" class="btn-danger">Reset Keranjang</button>
+
+                <button id="cart-whatsapp" class="btn-primary">
+                    Checkout via WhatsApp
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- =======================
+         FOOTER
+    ======================== -->
+    <footer>
+        <p>© 2025 Herbaprima — Semua Hak Dilindungi</p>
+    </footer>
+
+    <!-- SCRIPT -->
+    <script src="assets/js/cart.js"></script>
+
+</body>
+</html>
