@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Herbal — Herbaprima</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+<header class="navbar">
+    <div class="logo"><a href="../index.html">HERBAPRIMA</a></div>
+    <nav>
+        <a href="../index.html">Beranda</a>
+        <a href="../tentang_kami.html">Tentang Kami</a>
+        <a href="../blog.html">Blog</a>
+        <a href="../kontak.html">Kontak</a>
+        <a href="../cart.html" class="cart-link">Keranjang <span id="cartCount">0</span></a>
+    </nav>
+</header>
+
+<section class="page-header">
+    <h1>Kategori: Minuman</h1>
+</section>
+
+<section class="container product-list" id="categoryProducts"></section>
+
+<footer class="footer">
+    <p>© 2025 Herbaprima</p>
+</footer>
+
+<script src="../products.js"></script>
+<script>
+    const container = document.getElementById("categoryProducts");
+    const items = products.filter(p => p.category === "minuman");
+
+    if (items.length === 0) {
+        container.innerHTML = "<p>Tidak ada produk.</p>";
+    } else {
+        container.innerHTML = items.map(p => `
+            <div class="product-card">
+                <img src="../${p.image}" alt="${p.name}">
+                <h3>${p.name}</h3>
+                <p class="price">Rp ${p.price.toLocaleString("id-ID")}</p>
+                <a href="../detail.html?id=${p.id}" class="btn-detail">Lihat Detail</a>
+            </div>
+        `).join("");
+    }
+</script>
+<script src="../cart.js"></script>
+
+</body>
+</html>
