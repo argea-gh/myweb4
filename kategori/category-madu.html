@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kategori Madu – Herbaprima</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="navbar">
+    <a href="index.html" class="logo">Herbaprima</a>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="category-herbal.html">Herbal</a>
+        <a class="active" href="category-madu.html">Madu</a>
+        <a href="category-kecantikan.html">Kecantikan</a>
+        <a href="cart.html" class="cart-btn">🛒 <span id="cart-count">0</span></a>
+    </nav>
+</header>
+
+<section class="product-list-section">
+    <h1 class="section-title">Kategori: Madu</h1>
+    <div id="product-list" class="product-grid"></div>
+</section>
+
+<footer>
+    <p>© 2025 Herbaprima</p>
+</footer>
+
+<script src="products.js"></script>
+<script src="cart.js"></script>
+<script>
+    window.addEventListener("DOMContentLoaded", () => {
+        const stored = JSON.parse(localStorage.getItem("products")) || [];
+        const all = [...products, ...stored];
+        const listEl = document.getElementById("product-list");
+
+        const filtered = all.filter(p => p.category.toLowerCase() === "madu");
+
+        listEl.innerHTML = filtered.map(p => `
+            <div class="product-card">
+                <img src="${p.image}" alt="${p.title}">
+                <h3>${p.title}</h3>
+                <p class="price">Rp ${p.price.toLocaleString()}</p>
+                <a href="detail.html?id=${p.id}" class="btn-primary">Lihat Detail</a>
+            </div>
+        `).join("");
+
+        updateCartCount();
+    });
+</script>
+</body>
+</html>
