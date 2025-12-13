@@ -69,6 +69,12 @@ function renderProductDetail() {
 
     renderRelatedProducts(product.category, product.id);
 }
+function buyViaWhatsApp(product) {
+    let waNumber = "6282241900467";
+    let message = `Halo Herbaprima, saya ingin memesan:%0A- ${product.nama}%0AHarga: Rp ${product.harga.toLocaleString()}%0A%0ANama:%0AAlamat:%0ANo HP:%0A`;
+    let url = `https://wa.me/6282241900467?text=${message}`;
+    window.open(url, "_blank");
+}
 
 /* ------------------------------------------------------
    Produk Terkait
@@ -98,12 +104,19 @@ function renderRelatedProducts(category, excludeId) {
 
             <button class="btn-cart-small"
                 onclick='addToCart(${JSON.stringify(p)})'>
-                + Keranjang
+                + Keranjang                
             </button>
+            
         </div>
     `
         )
         .join("");
+}
+function buyViaWhatsApp(product) {
+    let waNumber = "6282241900467";
+    let message = `Halo Herbaprima, saya ingin memesan:%0A- ${product.nama}%0AHarga: Rp ${product.harga.toLocaleString()}%0A%0ANama:%0AAlamat:%0ANo HP:%0A`;
+    let url = `https://wa.me/6282241900467?text=${message}`;
+    window.open(url, "_blank");
 }
 
 /* ------------------------------------------------------
