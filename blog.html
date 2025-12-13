@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Blog – Herbaprima</title>
+    <link rel="stylesheet" href="assets/css/style.css" />
+
+    <style>
+        .blog-container {
+            max-width: 1100px;
+            margin: 120px auto;
+            padding: 20px;
+        }
+
+        .blog-card {
+            background: white;
+            border-radius: 16px;
+            padding: 20px;
+            margin-bottom: 35px;
+            box-shadow: 0 4px 14px rgba(0,0,0,0.1);
+            transition: .3s;
+        }
+
+        .blog-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .blog-title {
+            font-size: 26px;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        p { line-height: 1.7; font-size: 17px; }
+
+        .readmore-btn {
+            margin-top: 10px;
+            display: inline-block;
+            padding: 8px 14px;
+            background: #2f855a;
+            color: white;
+            border-radius: 8px;
+            text-decoration: none;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <header class="navbar">
+        <a href="index.html" class="logo">Herbaprima</a>
+
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="produk/minuman_sehat/index.html">Produk</a>
+            <a href="tentang_kami.html">Tentang Kami</a>
+            <a href="blog.html" class="active">Blog</a>
+            <a href="kontak.html">Kontak</a>
+            <a href="cart.html">Keranjang</a>
+        </nav>
+    </header>
+
+
+    <div class="blog-container">
+
+        <!-- BLOG 1 -->
+        <div class="blog-card" data-aos="fade-up">
+            <div class="blog-title">Tips Sehat Alami dengan Herbal Sehari-Hari</div>
+            <p>
+                Menjaga kesehatan tidak harus mahal. Dengan mengoptimalkan tanaman herbal dan pola 
+                hidup natural, tubuh dapat tetap bugar dan kuat. Mulai dari madu, habbatussauda, 
+                hingga minuman herbal — semua dapat membantu meningkatkan imunitas.
+            </p>
+            <a href="#" class="readmore-btn">Baca selengkapnya</a>
+        </div>
+
+        <!-- BLOG 2 -->
+        <div class="blog-card" data-aos="fade-up">
+            <div class="blog-title">Manfaat Tanaman Obat Populer di Indonesia</div>
+            <p>
+                Indonesia kaya dengan tanaman obat seperti jahe, kunyit, sambiloto, pegagan, dan 
+                habbatussauda. Banyak penelitian yang menunjukkan manfaatnya bagi kesehatan dan 
+                pengobatan tradisional.
+            </p>
+            <a href="#" class="readmore-btn">Baca selengkapnya</a>
+        </div>
+
+        <!-- BLOG 3 -->
+        <div class="blog-card" data-aos="fade-up">
+            <div class="blog-title">Mengapa Produk Herbal Menjadi Pilihan Modern?</div>
+            <p>
+                Di era modern, masyarakat semakin sadar pentingnya kesehatan alami. Produk herbal 
+                menjadi alternatif aman dan minim efek samping dibanding obat kimia.
+            </p>
+            <a href="#" class="readmore-btn">Baca selengkapnya</a>
+        </div>
+
+    </div>
+
+    <script src="assets/js/app.js"></script>
+
+</body>
+</html>
