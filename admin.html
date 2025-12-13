@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin Panel – Herbaprima</title>
+
+    <link rel="stylesheet" href="assets/css/style.css" />
+
+    <style>
+        /* Styling Admin */
+        .admin-container {
+            max-width: 1100px;
+            margin: 120px auto;
+            padding: 20px;
+        }
+
+        .admin-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .admin-header h1 {
+            font-size: 32px;
+            font-weight: bold;
+        }
+
+        .admin-box {
+            background: #ffffff;
+            padding: 20px;
+            border-radius: 14px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        label {
+            font-weight: 600;
+        }
+
+        input, select, textarea {
+            width: 100%;
+            padding: 10px;
+            border-radius: 10px;
+            border: 1px solid #cccccc;
+            margin-top: 6px;
+        }
+
+        textarea {
+            height: 90px;
+        }
+
+        .btn {
+            padding: 10px 18px;
+            border-radius: 10px;
+            cursor: pointer;
+            border: none;
+            font-weight: bold;
+        }
+
+        .btn-green { background: #38a169; color: white; }
+        .btn-blue { background: #3182ce; color: white; }
+        .btn-red { background: #e53e3e; color: white; }
+        .btn-yellow { background: #dd6b20; color: white; }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 25px;
+        }
+
+        table th, table td {
+            padding: 12px;
+            border-bottom: 1px solid #dddddd;
+            text-align: left;
+        }
+
+        table th {
+            background: #f8f9fa;
+            font-weight: bold;
+        }
+
+        .product-image {
+            width: 60px;
+            border-radius: 8px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- ===========================
+         NAVBAR
+    ============================ -->
+    <header class="navbar">
+        <a href="index.html" class="logo">Herbaprima</a>
+
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="produk/minuman_sehat/index.html">Produk</a>
+            <a href="tentang_kami.html">Tentang Kami</a>
+            <a href="cart.html">Keranjang</a>
+        </nav>
+    </header>
+
+
+    <!-- ===========================
+         ADMIN PANEL
+    ============================ -->
+    <div class="admin-container">
+
+        <div class="admin-header">
+            <h1>Panel Admin Herbaprima</h1>
+        </div>
+
+        <!-- ===========================
+             FORM TAMBAH / EDIT PRODUK
+        ============================ -->
+        <div class="admin-box">
+            <h2 id="form-title">Tambah Produk Baru</h2>
+
+            <form id="product-form">
+
+                <input type="hidden" id="product-id" />
+
+                <div class="form-group">
+                    <label>Nama Produk</label>
+                    <input type="text" id="product-name" required />
+                </div>
+
+                <div class="form-group">
+                    <label>Kategori</label>
+                    <select id="product-category" required>
+                        <option value="">-- pilih kategori --</option>
+                        <option value="Minuman Sehat">Minuman Sehat</option>
+                        <option value="Madu Premium">Madu Premium</option>
+                        <option value="Minyak Herba">Minyak Herba</option>
+                        <option value="Aneka Herbal">Aneka Herbal</option>
+                        <option value="Perawatan Kulit">Perawatan Kulit</option>
+                        <option value="Perawatan Pribadi">Perawatan Pribadi</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label>Harga (Rp)</label>
+                    <input type="number" id="product-price" required />
+                </div>
+
+                <div class="form-group">
+                    <label>Link Gambar Produk</label>
+                    <input type="text" id="product-image" required />
+                </div>
+
+                <div class="form-group">
+                    <label>Deskripsi Singkat</label>
+                    <textarea id="product-desc"></textarea>
+                </div>
+
+                <button type="submit" class="btn btn-green" id="save-btn">Simpan Produk</button>
+                <button type="button" class="btn btn-blue" id="reset-btn">Reset Form</button>
+            </form>
+        </div>
+
+
+        <!-- ===========================
+             DAFTAR PRODUK
+        ============================ -->
+        <div class="admin-box">
+            <h2>Daftar Produk</h2>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Gambar</th>
+                        <th>Nama Produk</th>
+                        <th>Kategori</th>
+                        <th>Harga</th>
+                        <th>Aksi</th>
+                    </tr>
+                </thead>
+
+                <tbody id="product-list">
+                    <!-- Produk akan muncul otomatis dari admin.js -->
+                </tbody>
+            </table>
+        </div>
+
+    </div>
+
+
+    <!-- SCRIPT -->
+    <script src="assets/js/products.js"></script>
+    <script src="assets/js/admin.js"></script>
+
+</body>
+</html>
